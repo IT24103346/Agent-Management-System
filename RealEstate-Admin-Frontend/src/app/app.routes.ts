@@ -5,10 +5,11 @@ import { NavbarComponent } from './common/navbar/navbar.component';
 import { AddComponent } from './pages/add/add.component';
 import { FindComponent } from './pages/find/find.component';
 import { ListingComponent } from './pages/listing/listing.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 export const routes: Routes = [
     {
-        path:"",
+        path: "",
         component: HeropageComponent
     },
     {
@@ -30,5 +31,9 @@ export const routes: Routes = [
     {
         path: "listing",
         component: ListingComponent
+    },
+    {
+        path:"admin-page",
+        component: AdminComponent
     }
 ];
