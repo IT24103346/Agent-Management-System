@@ -12,53 +12,46 @@ import { CommonModule } from '@angular/common';
   styleUrl: './admin-add.component.css'
 })
 export class AdminAddComponent {
-   public property: any = {
-    owner: "",
-    ownercontact: "",
-    location: "",
-    district: "",
-    price: "",
-    type: ""
+   public admin: any = {
+    adminName: "",
+    adminContact: "",
+    adminAddress: "",
+    adminEmail: "",
   };
 
-  async addProperty() {
+  async addAdmin() {
     try {
-      let response = await fetch("http://localhost:8080/property/add-property", {
+      let response = await fetch("http://localhost:8080/admin/add-admin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          "owner": this.property.owner,
-          "ownerContact": this.property.ownercontact,
-          "location": this.property.location,
-          "district": this.property.district,
-          "price": this.property.price,
-          "type": this.property.type
+          "adminName": this.admin.adminName,
+          "adminContact": this.admin.adminContact,
+          "adminAddress": this.admin.adminAddress,
+          "adminEmail": this.admin.adminEmail,
         })
       });
 
       if (!response.ok) {
-        throw new Error('Failed to add property');
+        throw new Error('Failed to add Admin');
       }
 
-      alert('Property added successfully');
+      alert('Admin added successfully');
       let body = await response.json();
       alert(JSON.stringify(body));
       return body;
       
     } catch (error) {
       console.error('Error:', error);
-      // alert('An error occurred while adding the property.');
     }
   }
 
   clearFields() {
-    this.property = {
-      owner: "",
-      ownercontact: "",
-      location: "",
-      district: "",
-      price: "",
-      type: ""
+    this.admin = {
+      adminName: "",
+      adminContact: "",
+      adminAddress: "",
+      adminEmail: "",
     };
   }
 

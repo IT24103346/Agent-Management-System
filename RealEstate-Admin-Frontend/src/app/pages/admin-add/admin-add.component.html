@@ -1,13 +1,13 @@
 <div class="banner">
   <app-navbar></app-navbar>
-  <form #propertyForm="ngForm">
+  <form #adminForm="ngForm">
   <div class="form">
     <div>
       <input
         type="text"
         class="form-control"
-        [(ngModel)]="property.owner"
-        name="owner"
+        [(ngModel)]="admin.adminName"
+        name="adminName"
         placeholder="Enter Name"
         required
       />
@@ -17,8 +17,8 @@
       <input
         type="text"
         class="form-control"
-        [(ngModel)]="property.ownercontact"
-        name="ownercontact"
+        [(ngModel)]="admin.adminContact"
+        name="adminContact"
         placeholder="Enter Contact"
         required
       />
@@ -28,8 +28,8 @@
       <input
         type="text"
         class="form-control"
-        [(ngModel)]="property.location"
-        name="location"
+        [(ngModel)]="admin.adminAddress"
+        name="adminAddress"
         placeholder="Enter Address"
         required
       />
@@ -39,8 +39,8 @@
       <input
         type="text"
         class="form-control"
-        [(ngModel)]="property.price"
-        name="location"
+        [(ngModel)]="admin.adminEmail"
+        name="adminEmail"
         placeholder="Enter Email"
         required
       />
@@ -49,7 +49,7 @@
     <button
       type="submit"
       class="btn btn-primary"
-      (click)="addProperty(); clearFields()"
+      (click)="addAdmin(); clearFields()"
     >
       Add Admin
     </button>
