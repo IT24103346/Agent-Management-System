@@ -5,12 +5,12 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-admin',
+  selector: 'app-agent',
   standalone: true,
   imports: [NavbarComponent,FormsModule, CommonModule, RouterLink],
-  templateUrl: './admin.component.html',
-  styleUrl: './admin.component.css'
+  templateUrl: './agent.component.html',
+  styleUrl: './agent.component.css'
 })
-export class AdminComponent {
+export class AgentComponent {
 
 }

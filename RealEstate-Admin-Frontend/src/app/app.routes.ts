@@ -6,6 +6,11 @@ import { AddComponent } from './pages/add/add.component';
 import { FindComponent } from './pages/find/find.component';
 import { ListingComponent } from './pages/listing/listing.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { AdminAddComponent } from './pages/admin-add/admin-add.component';
+import { AdminManageComponent } from './pages/admin-manage/admin-manage.component';
+import { AgentComponent } from './pages/agent/agent.component';
+import { AgentAddComponent } from './pages/agent-add/agent-add.component';
+import { AgentManageComponent } from './pages/agent-manage/agent-manage.component';
 
 export const routes: Routes = [
     {
@@ -35,5 +40,25 @@ export const routes: Routes = [
     {
         path:"admin-page",
         component: AdminComponent
+    },
+    {
+        path:"add-admin",
+        component: AdminAddComponent
+    },
+    {
+        path: "manage-admin",
+        component: AdminManageComponent
+    },
+    {
+        path: "agent",
+        component: AgentComponent
+    },
+    {
+        path: "add-agent",
+        component: AgentAddComponent
+    },
+    {
+        path: "manage-agent",
+        component: AgentManageComponent
     }
 ];
