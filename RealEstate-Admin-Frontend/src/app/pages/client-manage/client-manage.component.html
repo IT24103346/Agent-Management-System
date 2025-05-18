@@ -1,1 +1,25 @@
-<p>client-manage works!</p>
+<div class="banner">
+    <app-navbar></app-navbar>
+    <div class="searchbar">
+        <input type="text" class="search" placeholder="Enter Admin Name" [(ngModel)]="id" >
+        <button class="searchbtn" (click)="getPropertyInfo()" >Search</button>
+    </div>
+
+    <div class="details">
+              
+        <div *ngIf="propertyInfo.id">
+          <p>Property ID: <span class="txt">{{ propertyInfo.id }}</span></p>
+          <p>Owner: <input class="txt" [(ngModel)]="updatedPropertyInfo.owner" /></p>
+          <p>Owner Contact: <input class="txt" [(ngModel)]="updatedPropertyInfo.ownerContact" /></p>
+          <p>Location: <input class="txt" [(ngModel)]="updatedPropertyInfo.location" /></p>
+          <p>District: <input class="txt" [(ngModel)]="updatedPropertyInfo.district" /></p>
+          <p>Price: <input class="txt" [(ngModel)]="updatedPropertyInfo.price" /></p>
+          <p>Type: <input class="txt" [(ngModel)]="updatedPropertyInfo.type" /></p>
+        <div class="buttons">
+          <button (click)="updateProperty()" class="update">Update</button>
+          <button (click)="deleteProperty()" class="delete">Delete</button>
+        </div>
+        </div>
+      </div>
+      
+</div>
