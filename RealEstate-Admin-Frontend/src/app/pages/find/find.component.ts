@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-find',
   standalone: true,
-  imports: [RouterLink, NavbarComponent, FormsModule, CommonModule],
+  imports: [NavbarComponent, FormsModule, CommonModule],
   templateUrl: './find.component.html',
   styleUrl: './find.component.css'
 })
