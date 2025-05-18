@@ -21,14 +21,6 @@ export class AdminAddComponent {
     type: ""
   };
 
-  public districts: string[] = [
-    'Colombo', 'Gampaha', 'Kalutara', 'Kandy', 'Matale', 'Nuwara Eliya',
-    'Galle', 'Matara', 'Hambantota', 'Jaffna', 'Kilinochchi', 'Mannar',
-    'Vavuniya', 'Mullaitivu', 'Batticaloa', 'Ampara', 'Trincomalee',
-    'Kurunegala', 'Puttalam', 'Anuradhapura', 'Polonnaruwa', 'Badulla',
-    'Monaragala', 'Ratnapura', 'Kegalle'
-  ];
-
   async addProperty() {
     try {
       let response = await fetch("http://localhost:8080/property/add-property", {

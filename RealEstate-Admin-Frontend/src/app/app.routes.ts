@@ -11,6 +11,9 @@ import { AdminManageComponent } from './pages/admin-manage/admin-manage.componen
 import { AgentComponent } from './pages/agent/agent.component';
 import { AgentAddComponent } from './pages/agent-add/agent-add.component';
 import { AgentManageComponent } from './pages/agent-manage/agent-manage.component';
+import { AppointmentComponent } from './pages/appointment/appointment.component';
+import { AppointmentAddComponent } from './pages/appointment-add/appointment-add.component';
+import { AppointmentManageComponent } from './pages/appointment-manage/appointment-manage.component';
 
 export const routes: Routes = [
     {
@@ -60,5 +63,17 @@ export const routes: Routes = [
     {
         path: "manage-agent",
         component: AgentManageComponent
+    },
+    {
+        path: "appointment",
+        component: AppointmentComponent
+    },
+    {
+        path: "add-appointment",
+        component: AppointmentAddComponent
+    },
+    {
+        path: "manage-appointment",
+        component: AppointmentManageComponent
     }
 ];

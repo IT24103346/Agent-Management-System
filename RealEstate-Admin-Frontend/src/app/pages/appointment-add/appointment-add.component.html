@@ -1,1 +1,58 @@
-<p>appointment-add works!</p>
+<div class="banner">
+  <app-navbar></app-navbar>
+  <form #propertyForm="ngForm">
+  <div class="form">
+    <div>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="property.owner"
+        name="owner"
+        placeholder="Enter Admin Name"
+        required
+      />
+    </div>
+
+    <div>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="property.ownercontact"
+        name="ownercontact"
+        placeholder="Enter Admin Contact"
+        required
+      />
+    </div>
+
+    <div>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="property.location"
+        name="location"
+        placeholder="Enter Admin Address"
+        required
+      />
+    </div>
+
+    <div>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="property.price"
+        name="location"
+        placeholder="Enter Email"
+        required
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      (click)="addProperty(); clearFields()"
+    >
+      Add Agent
+    </button>
+  </div>
+</form>
+</div>
