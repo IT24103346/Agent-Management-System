@@ -14,7 +14,7 @@
             font-family: 'Poppins', sans-serif;
         }
         .gradient-overlay {
-            background: linear-gradient(45deg, rgba(79, 70, 229, 0.9), rgba(99, 102, 241, 0.9));
+            background: linear-gradient(45deg, rgba(20, 83, 45, 0.9), rgba(5, 150, 105, 0.9));
         }
     </style>
 </head>
@@ -73,7 +73,7 @@
                         <label for="otp" class="block text-sm font-medium text-gray-700">OTP Code</label>
                         <div class="mt-1">
                             <input id="otp" name="otp" type="text" required
-                                class="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-150 ease-in-out"
+                                class="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-150 ease-in-out"
                                 placeholder="Enter the OTP sent to your email">
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                         <label for="newPassword" class="block text-sm font-medium text-gray-700">New Password</label>
                         <div class="mt-1">
                             <input id="newPassword" name="newPassword" type="password" required
-                                class="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-150 ease-in-out"
+                                class="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-150 ease-in-out"
                                 placeholder="Create a new password"
                                 pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
                                 title="Password must be at least 8 characters with at least one letter, one number, and one special character">
@@ -94,14 +94,14 @@
                         <label for="confirmPassword" class="block text-sm font-medium text-gray-700">Confirm Password</label>
                         <div class="mt-1">
                             <input id="confirmPassword" name="confirmPassword" type="password" required
-                                class="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition duration-150 ease-in-out"
+                                class="appearance-none block w-full px-4 py-3 border border-gray-300 rounded-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition duration-150 ease-in-out"
                                 placeholder="Confirm your new password">
                         </div>
                     </div>
 
                     <div>
                         <button type="submit"
-                            class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out transform hover:scale-105">
+                            class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150 ease-in-out transform hover:scale-105">
                             Reset Password
                         </button>
                     </div>
@@ -121,7 +121,7 @@
 
                     <div>
                         <button type="submit"
-                            class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out transform hover:scale-105">
+                            class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150 ease-in-out transform hover:scale-105">
                             Send OTP
                         </button>
                     </div>
@@ -131,7 +131,7 @@
                 <div class="text-center">
                     <p class="text-sm text-gray-600">
                         Remember your password?
-                        <a href="login.jsp" class="font-medium text-indigo-600 hover:text-indigo-500">
+                        <a href="login.jsp" class="font-medium text-green-600 hover:text-green-500">
                             Sign in
                         </a>
                     </p>
@@ -150,7 +150,7 @@
                     </div>
 
                     <div class="mt-6 text-center">
-                        <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                        <a href="#" class="text-sm font-medium text-green-600 hover:text-green-500">
                             Contact Support
                         </a>
                     </div>

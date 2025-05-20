@@ -1,7 +1,7 @@
-package com.trustyagents.servlet;
+package com.tourism.servlet;
 
-import com.trustyagents.model.User;
-import com.trustyagents.service.UserService;
+import com.tourism.model.User;
+import com.tourism.service.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import java.io.IOException;
@@ -33,7 +33,7 @@ public class UpdateProfileServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String dob = request.getParameter("dob");
         String address = request.getParameter("address");
-        String travelPreference = request.getParameter("travelPreference");
+        String budgetPreference = request.getParameter("budgetPreference");
 
         // Server-side validation
         boolean isValid = true;
@@ -82,9 +82,10 @@ public class UpdateProfileServlet extends HttpServlet {
         currentUser.setFirstName(firstName.trim());
         currentUser.setLastName(lastName.trim());
         currentUser.setPhone(phone != null ? phone.trim() : "");
+        currentUser.setRole(currentUser.getRole());
         currentUser.setDob(dob != null && !dob.isEmpty() ? dob : null);
         currentUser.setAddress(address != null ? address.trim() : null);
-        currentUser.setTravelPreference(travelPreference);
+        currentUser.setBudgetPreference(budgetPreference);
 
         // Update user in file
         boolean success = userService.updateUser(currentUser);

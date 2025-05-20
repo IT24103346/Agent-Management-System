@@ -1,7 +1,7 @@
-package com.trustyagents.servlet;
+package com.tourism.servlet;
 
-import com.trustyagents.model.User;
-import com.trustyagents.service.UserService;
+import com.tourism.model.User;
+import com.tourism.service.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import java.io.IOException;
@@ -40,8 +40,12 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
 
-            // Redirect to home page
-            response.sendRedirect("index.jsp");
+            if(email.endsWith("@trustyargents.com")){
+                response.sendRedirect("admin.jsp");
+            }else {
+                // Redirect to home page
+                response.sendRedirect("index.jsp");
+            }
         } else {
             // Login failed
             request.setAttribute("errorMessage", "Invalid email or password");

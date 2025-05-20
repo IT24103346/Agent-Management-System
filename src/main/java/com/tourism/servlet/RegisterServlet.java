@@ -1,7 +1,7 @@
-package com.trustyagents.servlet;
+package com.tourism.servlet;
 
-import com.trustyagents.model.User;
-import com.trustyagents.service.UserService;
+import com.tourism.model.User;
+import com.tourism.service.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import java.io.IOException;
@@ -25,6 +25,7 @@ public class RegisterServlet extends HttpServlet {
             throws ServletException, IOException {
 
         // Get parameters from request
+        String role = request.getParameter("accountType");
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String email = request.getParameter("email");
@@ -43,7 +44,7 @@ public class RegisterServlet extends HttpServlet {
         }
 
         // Create user object
-        User user = new User(firstName, lastName, email, phone, password);
+        User user = new User(firstName, lastName, email, phone, password,role);
 
         // Register user
         boolean success = userService.registerUser(user);
@@ -53,8 +54,8 @@ public class RegisterServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
 
-            // Redirect to home page
-            response.sendRedirect("index.jsp");
+            // Redirect to login page
+            response.sendRedirect("login.jsp");
         } else {
             // Set error message and forward back to register page
             request.setAttribute("errorMessage", "Email already exists");

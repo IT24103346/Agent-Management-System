@@ -1,13 +1,13 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.trustyagents.model.User" %>
+<%@ page import="com.tourism.model.User" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile - Hotel Rio</title>
+    <title>User Profile - Trusty Agents</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Toastify CSS -->
@@ -69,16 +69,16 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="index.jsp" class="text-2xl font-bold text-indigo-600">Hotel Rio</a>
+                    <a href="index.jsp" class="text-2xl font-bold text-green-600">Trusty Agents</a>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="index.jsp" class="text-gray-700 hover:text-indigo-600">Home</a>
-                    <a href="#" class="text-gray-700 hover:text-indigo-600">Rooms</a>
-                    <a href="#" class="text-gray-700 hover:text-indigo-600">About</a>
-                    <a href="#" class="text-gray-700 hover:text-indigo-600">Contact</a>
+                    <a href="index.jsp" class="text-gray-700 hover:text-green-600">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-green-600">Add</a>
+                    <a href="#" class="text-gray-700 hover:text-green-600">Find</a>
+                    <a href="#" class="text-gray-700 hover:text-green-600">Listing</a>
 
                     <div class="relative" id="userDropdown">
-                        <button id="dropdownButton" class="flex items-center text-gray-700 hover:text-indigo-600 focus:outline-none">
+                        <button id="dropdownButton" class="flex items-center text-gray-700 hover:text-green-600 focus:outline-none">
                             <span>Welcome, <%= user.getFirstName() %></span>
                             <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -99,7 +99,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="bg-white shadow-xl rounded-lg overflow-hidden">
             <!-- Profile Header -->
-            <div class="bg-indigo-600 h-48 relative">
+            <div class="bg-green-600 h-48 relative">
                 <div class="absolute bottom-0 left-0 w-full transform translate-y-1/2 flex justify-center">
                     <div class="h-32 w-32 rounded-full border-4 border-white overflow-hidden bg-white">
                         <img src="https://th.bing.com/th/id/OIP.lcdOc6CAIpbvYx3XHfoJ0gHaF3?cb=iwc2&rs=1&pid=ImgDetMain" alt="Profile" class="h-full w-full object-cover">
@@ -117,8 +117,8 @@
                 <!-- Profile Tabs -->
                 <div class="border-b border-gray-200 mb-8">
                     <div class="flex justify-center space-x-8">
-                        <button class="border-b-2 border-indigo-600 text-indigo-600 pb-4 px-2 font-medium">Personal Info</button>
-                        <button class="text-gray-500 pb-4 px-2 font-medium hover:text-gray-700">Bookings</button>
+                        <button class="border-b-2 border-green-600 text-green-600 pb-4 px-2 font-medium">Personal Info</button>
+                        <button class="text-gray-500 pb-4 px-2 font-medium hover:text-gray-700">Agents</button>
                         <button class="text-gray-500 pb-4 px-2 font-medium hover:text-gray-700">Preferences</button>
                         <button class="text-gray-500 pb-4 px-2 font-medium hover:text-gray-700">Payment Methods</button>
                     </div>
@@ -166,14 +166,13 @@
                         </div>
 
                         <div>
-                            <label for="travelPreference" class="block text-sm font-medium text-gray-700">Travel Preferences</label>
-                            <select id="travelPreference" name="travelPreference"
+                            <label for="budgetPreference" class="block text-sm font-medium text-gray-700">Budget Preferences</label>
+                            <select id="budgetPreference" name="budgetPreference"
                                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-2 px-3">
-                                <option value="Luxury" <%= "Luxury".equals(user.getTravelPreference()) ? "selected" : "" %>>Luxury</option>
-                                <option value="Business" <%= "Business".equals(user.getTravelPreference()) ? "selected" : "" %>>Business</option>
-                                <option value="Economy" <%= "Economy".equals(user.getTravelPreference()) ? "selected" : "" %>>Economy</option>
-                                <option value="Family" <%= "Family".equals(user.getTravelPreference()) ? "selected" : "" %>>Family</option>
-                                <option value="Adventure" <%= "Adventure".equals(user.getTravelPreference()) ? "selected" : "" %>>Adventure</option>
+                                <option value="Below 10M" <%= "Below 10M".equals(user.getBudgetPreference()) ? "selected" : "" %>>Below 10 Million</option>
+                                <option value="10M - 20M" <%= "10M - 20M".equals(user.getBudgetPreference()) ? "selected" : "" %>>10M - 20M</option>
+                                <option value="Above 20M" <%= "Above 20M".equals(user.getBudgetPreference()) ? "selected" : "" %>>Above 20Million</option>
+                                <option value="Luxury" <%= "Luxury".equals(user.getBudgetPreference()) ? "selected" : "" %>>Luxury</option>
                             </select>
                         </div>
 
@@ -203,7 +202,7 @@
                         </div>
 
                         <div class="flex space-x-4">
-                            <button type="submit" class="flex-1 flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
+                            <button type="submit" class="flex-1 flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-150 ease-in-out">
                                 Save Changes
                             </button>
 

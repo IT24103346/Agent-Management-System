@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.example</groupId>
-  <artifactId>TrustyAgents</artifactId>
+  <artifactId>Real Estate</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <n>Trusty Agents Maven Webapp</n>
+  <name>Tourism Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -14,8 +14,15 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>jakarta.servlet</groupId>
+      <artifactId>jakarta.servlet-api</artifactId>
+      <version>6.0.0</version> <!-- or newer -->
+      <scope>provided</scope>
+    </dependency>
+
   </dependencies>
   <build>
-    <finalName>TrustyAgents</finalName>
+    <finalName>Tourism</finalName>
   </build>
 </project>

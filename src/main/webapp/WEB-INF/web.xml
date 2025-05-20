@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <display-name>Trusty Agents Package Management System</display-name>
+    <display-name>Tourism Package Management System</display-name>
 
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
@@ -12,7 +12,7 @@
 
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>com.trustyagents.servlet.RegisterServlet</servlet-class>
+        <servlet-class>com.tourism.servlet.RegisterServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -22,7 +22,7 @@
 
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>com.trustyagents.servlet.LoginServlet</servlet-class>
+        <servlet-class>com.tourism.servlet.LoginServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -32,7 +32,7 @@
 
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
-        <servlet-class>com.trustyagents.servlet.LogoutServlet</servlet-class>
+        <servlet-class>com.tourism.servlet.LogoutServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -42,7 +42,7 @@
 
     <servlet>
         <servlet-name>UpdateProfileServlet</servlet-name>
-        <servlet-class>com.trustyagents.servlet.UpdateProfileServlet</servlet-class>
+        <servlet-class>com.tourism.servlet.UpdateProfileServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -52,7 +52,7 @@
 
     <servlet>
         <servlet-name>DeleteAccountServlet</servlet-name>
-        <servlet-class>com.trustyagents.servlet.DeleteAccountServlet</servlet-class>
+        <servlet-class>com.tourism.servlet.DeleteAccountServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -62,7 +62,7 @@
 
     <servlet>
         <servlet-name>ForgotPasswordServlet</servlet-name>
-        <servlet-class>com.trustyagents.servlet.ForgotPasswordServlet</servlet-class>
+        <servlet-class>com.tourism.servlet.ForgotPasswordServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

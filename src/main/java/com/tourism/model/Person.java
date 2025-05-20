@@ -1,4 +1,4 @@
-package com.trustyagents.model;
+package com.tourism.model;
 
 import java.io.Serializable;
 
@@ -9,14 +9,16 @@ public class Person implements Serializable {
     protected String phone;
     protected String dob;
     protected String address;
+    protected String role;
     
     public Person() {}
     
-    public Person(String firstName, String lastName, String email, String phone) {
+    public Person(String firstName, String lastName, String email, String phone,String role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
+        this.role = role;
     }
     
     // Getters and setters
@@ -38,4 +40,7 @@ public class Person implements Serializable {
     
     public String getAddress() { return address; }
     public void setAddress(String address) { this.address = address; }
+
+    public String getRole() { return role; }
+    public void setRole(String role) { this.role = role; }
 }

@@ -1,6 +1,6 @@
-package com.trustyagents.servlet;
+package com.tourism.servlet;
 
-import com.trustyagents.service.UserService;
+import com.tourism.service.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import java.io.IOException;

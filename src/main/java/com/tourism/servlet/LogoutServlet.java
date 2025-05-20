@@ -1,4 +1,4 @@
-package com.trustyagents.servlet;
+package com.tourism.servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;

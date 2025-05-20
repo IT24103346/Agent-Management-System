@@ -1,6 +1,6 @@
-package com.trustyagents.service;
+package com.tourism.service;
 
-import com.trustyagents.model.User;
+import com.tourism.model.User;
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
@@ -8,7 +8,7 @@ import java.util.Random;
 
 
 public class UserService {
-    private static final String USER_FILE = "C:\\Users\\LASANTHI\\Desktop\\Tourism\\src\\main\\webapp\\assets\\Database\\users.txt";
+    private static final String USER_FILE = "D:\\TourismFinal\\Tourism\\src\\main\\webapp\\assets\\Database\\users.txt";
 
     // Map to store email -> OTP mappings
     private static final Map<String, String> otpMap = new HashMap<>();
@@ -58,18 +58,19 @@ public class UserService {
                     user.setEmail(parts[2]);
                     user.setPhone(parts[3]);
                     user.setPassword(parts[4]);
+                    user.setRole(parts[5]);
 
                     // Load additional fields if they exist
-                    if (parts.length > 5 && !parts[5].isEmpty()) {
-                        user.setDob(parts[5]);
-                    }
-
                     if (parts.length > 6 && !parts[6].isEmpty()) {
-                        user.setAddress(parts[6]);
+                        user.setDob(parts[6]);
                     }
 
                     if (parts.length > 7 && !parts[7].isEmpty()) {
-                        user.setTravelPreference(parts[7]);
+                        user.setAddress(parts[7]);
+                    }
+
+                    if (parts.length > 8 && !parts[8].isEmpty()) {
+                        user.setBudgetPreference(parts[8]);
                     }
 
                     return user;
@@ -240,7 +241,7 @@ public class UserService {
                     }
 
                     if (parts.length > 7 && !parts[7].isEmpty()) {
-                        user.setTravelPreference(parts[7]);
+                        user.setBudgetPreference(parts[7]);
                     }
 
                     updatedLines.add(user.toString());
@@ -262,3 +263,5 @@ public class UserService {
             return false;
         }
     }
+}
+

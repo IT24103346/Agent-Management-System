@@ -1,10 +1,10 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %><%@ page import="com.trustyagents.model.User" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %><%@ page import="com.tourism.model.User" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxury Hotel Reservations</title>
+    <title>Trusty Agents</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -72,7 +72,11 @@
                                 </svg>
                             </button>
                             <div id="dropdownMenu" class="dropdown-menu">
-                                <a href="profile.jsp" class="dropdown-item">Profile</a>
+                                <% if("agent".equals(currentUser.getRole())){ %>
+                                    <a href="profileAgent.jsp" class="dropdown-item">Profile</a>
+                                <% } else { %>
+                                    <a href="profile.jsp" class="dropdown-item">Profile</a>
+                                <% } %>
                                 <a href="bookings.jsp" class="dropdown-item">My Bookings</a>
                                 <a href="logout" class="dropdown-item">Logout</a>
                             </div>
@@ -81,32 +85,33 @@
                         <a href="login.jsp" class="text-gray-700 hover:text-green-600">Login</a>
                     <% } %>
 
-                    <button class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition duration-150 ease-in-out transform hover:scale-105">Book Now</button>
+                    <button class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition duration-150 ease-in-out transform hover:scale-105">Contact Agent</button>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <div class="relative bg-green-900 h-screen">
+    <div class="relative bg-indigo-900 h-screen">
         <div class="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-                 class="w-full h-full object-cover opacity-50" alt="Hotel">
+            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80"
+                 class="w-full h-full object-cover opacity-50" alt="Modern House">
         </div>
         <div class="relative h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
             <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                Experience Luxury Living
+                Find Your Dream Home Today
             </h1>
-            <p class="mt-6 text-xl text-green-100 max-w-3xl mx-auto">
-                Book your perfect stay with us and enjoy world-class amenities, stunning views, and exceptional service.
+            <p class="mt-6 text-xl text-indigo-100 max-w-3xl mx-auto">
+                Discover premium properties tailored to your lifestyle. Whether you're buying, selling, or investing — we're here to help you every step of the way.
             </p>
             <div class="mt-10">
                 <a href="#" class="inline-block bg-white px-8 py-3 border border-transparent text-base font-medium rounded-md text-green-600 hover:bg-green-50">
-                    Book Now
+                    Contact an Agent
                 </a>
             </div>
         </div>
     </div>
+
 
 
 
@@ -140,7 +145,7 @@
                     <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
                     <form class="space-y-4">
                         <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 rounded-md bg-gray-800 text-white">
-                        <button class="w-full bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700">
+                        <button class="w-full bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">
                             Subscribe
                         </button>
                     </form>
