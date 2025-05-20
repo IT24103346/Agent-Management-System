@@ -16,7 +16,22 @@ public class UserService {
     public UserService() {
     }
 
-    
+    public boolean registerUser(User user) {
+        // Check if user already exists
+        if (getUserByEmail(user.getEmail()) != null) {
+            return false;
+        }
+
+        try (FileWriter fw = new FileWriter(USER_FILE, true);
+             BufferedWriter bw = new BufferedWriter(fw);
+             PrintWriter out = new PrintWriter(bw)) {
+            out.println(user.toString());
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
 
     public User getUserByEmail(String email) {
         System.out.println("getUserByEmail - Looking for email: " + email);
