@@ -13,16 +13,16 @@ import { FormsModule } from '@angular/forms';
 })
 export class ListingComponent implements OnInit {
     ngOnInit(): void {
-    this.getPropertyInfo();
+    this.getAgentInfo();
   }
 
-  public propertyInfo:any = []
+  public agentInfo:any = []
 
-  async getPropertyInfo() {
-    let response = await fetch("http://localhost:8080/property/get-all");
+  async getAgentInfo() {
+    let response = await fetch("http://localhost:8080/agent/get-all");
     let body = await response.json();
-    this.propertyInfo = body;
-    console.log(this.propertyInfo);
+    this.agentInfo = body;
+    console.log(this.agentInfo);
     
   }
 

@@ -1,13 +1,35 @@
 <div class="banner">
   <app-navbar></app-navbar>
-  <form #propertyForm="ngForm">
+  <form #appointmentForm="ngForm">
   <div class="form">
     <div>
       <input
         type="text"
         class="form-control"
-        [(ngModel)]="property.owner"
-        name="owner"
+        [(ngModel)]="appointment.appointmentTitle"
+        name="appointmentTitle"
+        placeholder="Enter Title"
+        required
+      />
+    </div>
+
+    <div>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="appointment.appointmentDate"
+        name="appointmentDate"
+        placeholder="Enter Date"
+        required
+      />
+    </div>
+
+    <div>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="appointment.appointmentCreatedBy"
+        name="appointmentCreatedBy"
         placeholder="Enter Name"
         required
       />
@@ -17,31 +39,9 @@
       <input
         type="text"
         class="form-control"
-        [(ngModel)]="property.ownercontact"
-        name="ownercontact"
-        placeholder="Enter Contact"
-        required
-      />
-    </div>
-
-    <div>
-      <input
-        type="text"
-        class="form-control"
-        [(ngModel)]="property.location"
-        name="location"
-        placeholder="Enter Address"
-        required
-      />
-    </div>
-
-    <div>
-      <input
-        type="text"
-        class="form-control"
-        [(ngModel)]="property.price"
-        name="location"
-        placeholder="Enter Email"
+        [(ngModel)]="appointment.appointmentStatus"
+        name="appointmentStatus"
+        placeholder="Enter Status"
         required
       />
     </div>
@@ -49,9 +49,9 @@
     <button
       type="submit"
       class="btn btn-primary"
-      (click)="addProperty(); clearFields()"
+      (click)="addAppointment(); clearFields()"
     >
-      Add Agent
+      Add Appointment
     </button>
   </div>
 </form>

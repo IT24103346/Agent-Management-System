@@ -8,57 +8,51 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [NavbarComponent, FormsModule, CommonModule],
   templateUrl: './user-add.component.html',
-  styleUrl: './user-add.component.css'
+  styleUrl: './user-add.component.css',
 })
 export class UserAddComponent {
-  public property: any = {
-    owner: "",
-    ownercontact: "",
-    location: "",
-    district: "",
-    price: "",
-    type: ""
+  public user: any = {
+    userFirstName: '',
+    userLastMame: '',
+    userAddress: '',
+    userEmail: '',
+    userPhoneNumber: '',
   };
 
-  async addProperty() {
+  async addUser() {
     try {
-      let response = await fetch("http://localhost:8080/property/add-property", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      let response = await fetch('http://localhost:8080/user/add-user', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          "owner": this.property.owner,
-          "ownerContact": this.property.ownercontact,
-          "location": this.property.location,
-          "district": this.property.district,
-          "price": this.property.price,
-          "type": this.property.type
-        })
+          userFirstName: this.user.userFirstName,
+          userLastMame: this.user.userLastMame,
+          userAddress: this.user.userAddress,
+          userEmail: this.user.userEmail,
+          userPhoneNumber: this.user.userPhoneNumber,
+        }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to add property');
+        throw new Error('Failed to add user');
       }
 
-      alert('Property added successfully');
+      alert('user added successfully');
       let body = await response.json();
       alert(JSON.stringify(body));
       return body;
-      
     } catch (error) {
       console.error('Error:', error);
-      // alert('An error occurred while adding the property.');
     }
   }
 
   clearFields() {
-    this.property = {
-      owner: "",
-      ownercontact: "",
-      location: "",
-      district: "",
-      price: "",
-      type: ""
+    this.user = {
+      userFirstName: '',
+      userLastMame: '',
+      userAddress: '',
+      userEmail: '',
+      userPhoneNumber: '',
     };
   }
-
 }

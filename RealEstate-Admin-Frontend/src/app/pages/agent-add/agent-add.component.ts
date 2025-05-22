@@ -8,57 +8,51 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [NavbarComponent, FormsModule, CommonModule],
   templateUrl: './agent-add.component.html',
-  styleUrl: './agent-add.component.css'
+  styleUrl: './agent-add.component.css',
 })
 export class AgentAddComponent {
-  public property: any = {
-    owner: "",
-    ownercontact: "",
-    location: "",
-    district: "",
-    price: "",
-    type: ""
+  public agent: any = {
+    agentName: '',
+    agentContact: '',
+    agentAddress: '',
+    agentEmail: '',
+    agentRating: '',
   };
 
-  async addProperty() {
+  async addAgent() {
     try {
-      let response = await fetch("http://localhost:8080/property/add-property", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      let response = await fetch('http://localhost:8080/agent/add-agent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          "owner": this.property.owner,
-          "ownerContact": this.property.ownercontact,
-          "location": this.property.location,
-          "district": this.property.district,
-          "price": this.property.price,
-          "type": this.property.type
-        })
+          agentName: this.agent.agentName,
+          agentContact: this.agent.agentContact,
+          agentAddress: this.agent.agentAddress,
+          agentEmail: this.agent.agentEmail,
+          agentRating: this.agent.agentRating,
+        }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to add property');
+        throw new Error('Failed to add agent');
       }
 
-      alert('Property added successfully');
+      alert('agent added successfully');
       let body = await response.json();
       alert(JSON.stringify(body));
       return body;
-      
     } catch (error) {
       console.error('Error:', error);
-      // alert('An error occurred while adding the property.');
     }
   }
 
   clearFields() {
-    this.property = {
-      owner: "",
-      ownercontact: "",
-      location: "",
-      district: "",
-      price: "",
-      type: ""
+    this.agent = {
+      agentName: '',
+      agentContact: '',
+      agentAddress: '',
+      agentEmail: '',
+      agentRating: '',
     };
   }
-
 }

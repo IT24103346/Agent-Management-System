@@ -12,73 +12,73 @@ import { CommonModule } from '@angular/common';
 })
 export class AgentManageComponent {
   id: any;
-    public propertyInfo: any = {};
-    public updatedPropertyInfo: any = {};
+    public agentInfo: any = {};
+    public updatedAgentInfo: any = {};
   
     ngOnInit(): void {}
   
-    async getPropertyInfo() {
+    async getAgentInfo() {
       if (!this.id) {
-        alert("Please enter a valid property ID.");
+        alert("Please enter a valid agent ID.");
         return;
       }
   
       try {
-        let response = await fetch(`http://localhost:8080/property/search-by-id/${this.id}`);
+        let response = await fetch(`http://localhost:8080/agent/search-by-id/${this.id}`);
         if (!response.ok) {
-          throw new Error("Property not found or an error occurred.");
+          throw new Error("Agent not found or an error occurred.");
         }
-        this.propertyInfo = await response.json();
-        this.updatedPropertyInfo = { ...this.propertyInfo }; 
-        console.log(this.propertyInfo);
+        this.agentInfo = await response.json();
+        this.updatedAgentInfo = { ...this.agentInfo }; 
+        console.log(this.agentInfo);
       } catch (error) {
-        console.error("Error fetching property info:", error);
-        alert("Error finding property info. Please check the ID and try again.");
+        console.error("Error fetching agent info:", error);
+        alert("Error finding agent info. Please check the ID and try again.");
       }
     }
   
-    async updateProperty() {
+    async updateAgent() {
       try {
-        let response = await fetch('http://localhost:8080/property/update-property', {
+        let response = await fetch('http://localhost:8080/agent/update-agent', {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(this.updatedPropertyInfo)
+          body: JSON.stringify(this.updatedAgentInfo)
         });
   
         if (!response.ok) {
-          throw new Error("Error updating property.");
+          throw new Error("Error updating agent.");
         }
   
-        alert("Property updated successfully!");
-        this.getPropertyInfo(); 
+        alert("Agent updated successfully!");
+        this.getAgentInfo(); 
       } catch (error) {
-        console.error("Error updating property:", error);
-        alert("Error updating property. Please try again.");
+        console.error("Error updating agent:", error);
+        alert("Error updating agent. Please try again.");
       }
     }
   
-    async deleteProperty() {
-      if (!confirm("Are you sure you want to delete this property?")) {
+    async deleteAgent() {
+      if (!confirm("Are you sure you want to delete this agent?")) {
         return;
       }
   
       try {
-        let response = await fetch(`http://localhost:8080/property/delete-by-id/${this.id}`, {
+        let response = await fetch(`http://localhost:8080/agent/delete-by-id/${this.id}`, {
           method: 'DELETE'
         });
   
         if (!response.ok) {
-          throw new Error("Error deleting property.");
+          throw new Error("Error deleting agent.");
         }
   
         alert("Property deleted successfully!");
-        this.propertyInfo = {}; 
+        this.agentInfo = {}; 
         this.id = null; 
       } catch (error) {
-        console.error("Error deleting property:", error);
-        alert("Error deleting property. Please try again.");
+        console.error("Error deleting agent:", error);
+        alert("Error deleting agent. Please try again.");
       }
     }
 }

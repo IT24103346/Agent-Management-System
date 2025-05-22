@@ -1,13 +1,13 @@
 <div class="banner">
   <app-navbar></app-navbar>
-  <form #propertyForm="ngForm">
+  <form #agentForm="ngForm">
   <div class="form">
     <div>
       <input
         type="text"
         class="form-control"
-        [(ngModel)]="property.owner"
-        name="owner"
+        [(ngModel)]="agent.agentName"
+        name="agentName"
         placeholder="Enter Name"
         required
       />
@@ -17,8 +17,8 @@
       <input
         type="text"
         class="form-control"
-        [(ngModel)]="property.ownercontact"
-        name="ownercontact"
+        [(ngModel)]="agent.agentContact"
+        name="agentContact"
         placeholder="Enter Contact"
         required
       />
@@ -28,8 +28,8 @@
       <input
         type="text"
         class="form-control"
-        [(ngModel)]="property.location"
-        name="location"
+        [(ngModel)]="agent.agentAddress"
+        name="agentAddress"
         placeholder="Enter Address"
         required
       />
@@ -39,9 +39,20 @@
       <input
         type="text"
         class="form-control"
-        [(ngModel)]="property.price"
-        name="location"
+        [(ngModel)]="agent.agentEmail"
+        name="agentEmail"
         placeholder="Enter Email"
+        required
+      />
+    </div>
+
+    <div>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="agent.agentRating"
+        name="agentRating"
+        placeholder="Enter Rating (0-10)"
         required
       />
     </div>
@@ -49,7 +60,7 @@
     <button
       type="submit"
       class="btn btn-primary"
-      (click)="addProperty(); clearFields()"
+      (click)="addAgent(); clearFields()"
     >
       Add Agent
     </button>

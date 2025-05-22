@@ -1,14 +1,14 @@
 <div class="banner">
   <app-navbar></app-navbar>
-  <form #propertyForm="ngForm">
+  <form #userForm="ngForm">
   <div class="form">
     <div>
       <input
         type="text"
         class="form-control"
-        [(ngModel)]="property.owner"
-        name="owner"
-        placeholder="Enter  Name"
+        [(ngModel)]="user.userFirstName"
+        name="userFirstName"
+        placeholder="Enter First Name"
         required
       />
     </div>
@@ -17,9 +17,9 @@
       <input
         type="text"
         class="form-control"
-        [(ngModel)]="property.ownercontact"
-        name="ownercontact"
-        placeholder="Enter  Contact"
+        [(ngModel)]="user.userLastMame"
+        name="userLastMame"
+        placeholder="Enter Last Name"
         required
       />
     </div>
@@ -28,8 +28,8 @@
       <input
         type="text"
         class="form-control"
-        [(ngModel)]="property.location"
-        name="location"
+        [(ngModel)]="user.userAddress"
+        name="userAddress"
         placeholder="Enter  Address"
         required
       />
@@ -39,9 +39,20 @@
       <input
         type="text"
         class="form-control"
-        [(ngModel)]="property.price"
-        name="location"
+        [(ngModel)]="user.userEmail"
+        name="userEmail"
         placeholder="Enter Email"
+        required
+      />
+    </div>
+
+    <div>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="user.userPhoneNumber"
+        name="userPhoneNumber"
+        placeholder="Enter phone number"
         required
       />
     </div>
@@ -49,7 +60,7 @@
     <button
       type="submit"
       class="btn btn-primary"
-      (click)="addProperty(); clearFields()"
+      (click)="addUser(); clearFields()"
     >
       Add User
     </button>

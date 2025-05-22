@@ -8,56 +8,51 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [NavbarComponent, FormsModule, CommonModule],
   templateUrl: './appointment-add.component.html',
-  styleUrl: './appointment-add.component.css'
+  styleUrl: './appointment-add.component.css',
 })
 export class AppointmentAddComponent {
-   public property: any = {
-    owner: "",
-    ownercontact: "",
-    location: "",
-    district: "",
-    price: "",
-    type: ""
+  public appointment: any = {
+    appointmentTitle: '',
+    appointmentDate: '',
+    appointmentCreatedBy: '',
+    appointmentStatus: '',
   };
 
-  async addProperty() {
+  async addAppointment() {
     try {
-      let response = await fetch("http://localhost:8080/property/add-property", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          "owner": this.property.owner,
-          "ownerContact": this.property.ownercontact,
-          "location": this.property.location,
-          "district": this.property.district,
-          "price": this.property.price,
-          "type": this.property.type
-        })
-      });
+      let response = await fetch(
+        'http://localhost:8080/appointment/add-appointment',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            appointmentTitle: this.appointment.appointmentTitle,
+            appointmentDate: this.appointment.appointmentDate,
+            appointmentCreatedBy: this.appointment.appointmentCreatedBy,
+            appointmentStatus: this.appointment.appointmentStatus,
+          }),
+        }
+      );
 
       if (!response.ok) {
-        throw new Error('Failed to add property');
+        throw new Error('Failed to add appointment');
       }
 
-      alert('Property added successfully');
+      alert('appointment added successfully');
       let body = await response.json();
       alert(JSON.stringify(body));
       return body;
-      
     } catch (error) {
       console.error('Error:', error);
-      // alert('An error occurred while adding the property.');
     }
   }
 
   clearFields() {
-    this.property = {
-      owner: "",
-      ownercontact: "",
-      location: "",
-      district: "",
-      price: "",
-      type: ""
+    this.appointment = {
+      appointmentTitle: '',
+      appointmentDate: '',
+      appointmentCreatedBy: '',
+      appointmentStatus: '',
     };
   }
 }

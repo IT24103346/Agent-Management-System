@@ -5,24 +5,22 @@
     <table class="property-table">
       <thead>
         <tr>
-          <th>Property ID</th>
-          <th>Owner</th>
-          <th>Owner Contact</th>
-          <th>Location</th>
-          <th>District</th>
-          <th>Price</th>
-          <th>Type</th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Contact</th>
+          <th>Address</th>
+          <th>Email</th>
+          <th>Rating</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let property of propertyInfo">
-          <td>{{ property.id }}</td>
-          <td>{{ property.owner }}</td>
-          <td>{{ property.ownerContact }}</td>
-          <td>{{ property.location }}</td>
-          <td>{{ property.district }}</td>
-          <td>{{ property.price}}</td>
-          <td>{{ property.type }}</td>
+        <tr *ngFor="let agent of agentInfo">
+          <td>{{ agent.id }}</td>
+          <td>{{agent.agentName }}</td>
+          <td>{{ agent.agentContact }}</td>
+          <td>{{ agent.agentAddress }}</td>
+          <td>{{ agent.agentEmail}}</td>
+          <td>{{ agent.agentRating }}</td>
         </tr>
       </tbody>
     </table>

@@ -1,25 +1,42 @@
 <div class="banner">
-    <app-navbar></app-navbar>
-    <div class="searchbar">
-        <input type="text" class="search" placeholder="Enter Admin Name" [(ngModel)]="id" >
-        <button class="searchbtn" (click)="getPropertyInfo()" >Search</button>
-    </div>
+  <app-navbar></app-navbar>
+  <div class="searchbar">
+    <input
+      type="text"
+      class="search"
+      placeholder="Enter User ID"
+      [(ngModel)]="id"
+    />
+    <button class="searchbtn" (click)="getUserInfo()">Search</button>
+  </div>
 
-    <div class="details">
-              
-        <div *ngIf="propertyInfo.id">
-          <p>Property ID: <span class="txt">{{ propertyInfo.id }}</span></p>
-          <p>Owner: <input class="txt" [(ngModel)]="updatedPropertyInfo.owner" /></p>
-          <p>Owner Contact: <input class="txt" [(ngModel)]="updatedPropertyInfo.ownerContact" /></p>
-          <p>Location: <input class="txt" [(ngModel)]="updatedPropertyInfo.location" /></p>
-          <p>District: <input class="txt" [(ngModel)]="updatedPropertyInfo.district" /></p>
-          <p>Price: <input class="txt" [(ngModel)]="updatedPropertyInfo.price" /></p>
-          <p>Type: <input class="txt" [(ngModel)]="updatedPropertyInfo.type" /></p>
-        <div class="buttons">
-          <button (click)="updateProperty()" class="update">Update</button>
-          <button (click)="deleteProperty()" class="delete">Delete</button>
-        </div>
-        </div>
+  <div class="details">
+    <div *ngIf="userInfo.id">
+      <p>
+        User ID: <span class="txt">{{ userInfo.id }}</span>
+      </p>
+      <p>
+        First Name:
+        <input class="txt" [(ngModel)]="updatedUserInfo.userFirstName" />
+      </p>
+      <p>
+        Last Name:
+        <input class="txt" [(ngModel)]="updatedUserInfo.userLastMame" />
+      </p>
+      <p>
+        Address: <input class="txt" [(ngModel)]="updatedUserInfo.userAddress" />
+      </p>
+      <p>
+        Email: <input class="txt" [(ngModel)]="updatedUserInfo.userEmail" />
+      </p>
+      <p>
+        Contact Number:
+        <input class="txt" [(ngModel)]="updatedUserInfo.userPhoneNumber" />
+      </p>
+      <div class="buttons">
+        <button (click)="updateUser()" class="update">Update</button>
+        <button (click)="deleteUser()" class="delete">Delete</button>
       </div>
-      
+    </div>
+  </div>
 </div>

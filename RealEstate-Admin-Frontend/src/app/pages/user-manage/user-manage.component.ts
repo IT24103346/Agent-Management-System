@@ -12,73 +12,73 @@ import { CommonModule } from '@angular/common';
 })
 export class UserManageComponent {
   id: any;
-    public propertyInfo: any = {};
-    public updatedPropertyInfo: any = {};
+    public userInfo: any = {};
+    public updatedUserInfo: any = {};
   
     ngOnInit(): void {}
   
-    async getPropertyInfo() {
+    async getUserInfo() {
       if (!this.id) {
-        alert("Please enter a valid property ID.");
+        alert("Please enter a valid user ID.");
         return;
       }
   
       try {
-        let response = await fetch(`http://localhost:8080/property/search-by-id/${this.id}`);
+        let response = await fetch(`http://localhost:8080/user/search-by-id/${this.id}`);
         if (!response.ok) {
-          throw new Error("Property not found or an error occurred.");
+          throw new Error("user not found or an error occurred.");
         }
-        this.propertyInfo = await response.json();
-        this.updatedPropertyInfo = { ...this.propertyInfo }; 
-        console.log(this.propertyInfo);
+        this.userInfo = await response.json();
+        this.updatedUserInfo = { ...this.userInfo }; 
+        console.log(this.userInfo);
       } catch (error) {
-        console.error("Error fetching property info:", error);
-        alert("Error finding property info. Please check the ID and try again.");
+        console.error("Error fetching user info:", error);
+        alert("Error finding user info. Please check the ID and try again.");
       }
     }
   
-    async updateProperty() {
+    async updateUser() {
       try {
-        let response = await fetch('http://localhost:8080/property/update-property', {
+        let response = await fetch('http://localhost:8080/user/update-user', {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(this.updatedPropertyInfo)
+          body: JSON.stringify(this.updatedUserInfo)
         });
   
         if (!response.ok) {
-          throw new Error("Error updating property.");
+          throw new Error("Error updating user.");
         }
   
-        alert("Property updated successfully!");
-        this.getPropertyInfo(); 
+        alert("user updated successfully!");
+        this.getUserInfo(); 
       } catch (error) {
-        console.error("Error updating property:", error);
-        alert("Error updating property. Please try again.");
+        console.error("Error updating user:", error);
+        alert("Error updating user. Please try again.");
       }
     }
   
-    async deleteProperty() {
-      if (!confirm("Are you sure you want to delete this property?")) {
+    async deleteUser() {
+      if (!confirm("Are you sure you want to delete this user?")) {
         return;
       }
   
       try {
-        let response = await fetch(`http://localhost:8080/property/delete-by-id/${this.id}`, {
+        let response = await fetch(`http://localhost:8080/user/delete-by-id/${this.id}`, {
           method: 'DELETE'
         });
   
         if (!response.ok) {
-          throw new Error("Error deleting property.");
+          throw new Error("Error deleting user.");
         }
   
-        alert("Property deleted successfully!");
-        this.propertyInfo = {}; 
+        alert("user deleted successfully!");
+        this.userInfo = {}; 
         this.id = null; 
       } catch (error) {
-        console.error("Error deleting property:", error);
-        alert("Error deleting property. Please try again.");
+        console.error("Error deleting user:", error);
+        alert("Error deleting user. Please try again.");
       }
     }
 }
