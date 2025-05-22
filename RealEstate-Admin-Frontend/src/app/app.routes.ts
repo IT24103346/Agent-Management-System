@@ -2,8 +2,6 @@ import { Routes } from '@angular/router';
 import { HeropageComponent } from './pages/heropage/heropage.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
-import { AddComponent } from './pages/add/add.component';
-import { FindComponent } from './pages/find/find.component';
 import { ListingComponent } from './pages/listing/listing.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { AdminAddComponent } from './pages/admin-add/admin-add.component';
@@ -20,90 +18,103 @@ import { ClientAddComponent } from './pages/client-add/client-add.component';
 import { UserComponent } from './pages/user/user.component';
 import { UserManageComponent } from './pages/user-manage/user-manage.component';
 import { UserAddComponent } from './pages/user-add/user-add.component';
+import { ReviewComponent } from './pages/review/review.component';
+import { ReviewAddComponent } from './pages/review-add/review-add.component';
+import { ReviewManageComponent } from './pages/review-manage/review-manage.component';
+import { ReviewViewComponent } from './pages/review-view/review-view.component';
 
 export const routes: Routes = [
-    {
-        path: "",
-        component: HeropageComponent
-    },
-    {
-        path: "dashboard",
-        component: DashboardComponent
-    },
-    {
-        path: "navbar",
-        component: NavbarComponent
-    },
-    {
-        path: "add",
-        component: AddComponent
-    },
-    {
-        path: "find",
-        component: FindComponent
-    },
-    {
-        path: "listing",
-        component: ListingComponent
-    },
-    {
-        path:"admin-page",
-        component: AdminComponent
-    },
-    {
-        path:"add-admin",
-        component: AdminAddComponent
-    },
-    {
-        path: "manage-admin",
-        component: AdminManageComponent
-    },
-    {
-        path: "agent",
-        component: AgentComponent
-    },
-    {
-        path: "add-agent",
-        component: AgentAddComponent
-    },
-    {
-        path: "manage-agent",
-        component: AgentManageComponent
-    },
-    {
-        path: "appointment",
-        component: AppointmentComponent
-    },
-    {
-        path: "add-appointment",
-        component: AppointmentAddComponent
-    },
-    {
-        path: "manage-appointment",
-        component: AppointmentManageComponent
-    },
-    {
-        path: "client",
-        component: ClientComponent
-    },
-    {
-        path: "manage-client",
-        component: ClientManageComponent
-    },
-    {
-        path: "add-client",
-        component: ClientAddComponent
-    },
-    {
-        path: "user",
-        component: UserComponent
-    },
-    {
-        path: "manage-user",
-        component: UserManageComponent
-    },
-    {
-        path: "add-user",
-        component: UserAddComponent
-    }
+  {
+    path: '',
+    component: HeropageComponent,
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+  },
+  {
+    path: 'navbar',
+    component: NavbarComponent,
+  },
+  {
+    path: 'admin-page',
+    component: AdminComponent,
+  },
+  {
+    path: 'add-admin',
+    component: AdminAddComponent,
+  },
+  {
+    path: 'manage-admin',
+    component: AdminManageComponent,
+  },
+  {
+    path: 'agent',
+    component: AgentComponent,
+  },
+  {
+    path: 'add-agent',
+    component: AgentAddComponent,
+  },
+  {
+    path: 'manage-agent',
+    component: AgentManageComponent,
+  },
+  {
+    path: 'view-agent',
+    component: ListingComponent,
+  },
+  {
+    path: 'appointment',
+    component: AppointmentComponent,
+  },
+  {
+    path: 'add-appointment',
+    component: AppointmentAddComponent,
+  },
+  {
+    path: 'manage-appointment',
+    component: AppointmentManageComponent,
+  },
+  {
+    path: 'client',
+    component: ClientComponent,
+  },
+  {
+    path: 'manage-client',
+    component: ClientManageComponent,
+  },
+  {
+    path: 'add-client',
+    component: ClientAddComponent,
+  },
+  {
+    path: 'user',
+    component: UserComponent,
+  },
+  {
+    path: 'manage-user',
+    component: UserManageComponent,
+  },
+  {
+    path: 'add-user',
+    component: UserAddComponent,
+  },
+  {
+    path: 'review',
+    component: ReviewComponent,
+  },
+  {
+    path: 'add-review',
+    component: ReviewAddComponent,
+  },
+  {
+    path: 'manage-review',
+    component: ReviewManageComponent,
+  },
+  {
+    path: 'view-review',
+    component: ReviewViewComponent,
+  },
+
 ];
